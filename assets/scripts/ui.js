@@ -11,7 +11,7 @@ const signUpSuccess = function () {
 const signInSuccess = function (data) {
   store.user = data.user
   console.log('Successful sign in')
-  $('#sign-in, #sign-out, #change-password, #new-game, #get-games, #get-over-games, #get-current-games').toggleClass('hidden')
+  $('#sign-in, #sign-out, #change-password, #new-character').toggleClass('hidden')
   if (!$('#sign-up').hasClass('hidden')) {
     $('#sign-up').toggleClass('hidden')
   }
@@ -22,12 +22,16 @@ const signInSuccess = function (data) {
 const signOutSuccess = function () {
   store.user = {}
   console.log('Successful sign out')
-  $('#sign-in, #sign-up, #sign-out, #change-password').toggleClass('hidden')
+  $('#sign-in, #sign-up, #sign-out, #change-password, #new-character').toggleClass('hidden')
 }
 
 const changePasswordSuccess = function () {
   console.log('Successfully changed password')
   document.getElementById('change-password').reset()
+}
+
+const newCharacterSuccess = function () {
+  console.log('Successful created a new character')
 }
 
 const failure = function () {
@@ -44,5 +48,6 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   changePasswordSuccess,
+  newCharacterSuccess,
   failure
 }

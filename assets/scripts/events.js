@@ -2,7 +2,7 @@
 
 const api = require('./api')
 const ui = require('./ui')
-const store = require('./store')
+// const store = require('./store')
 const getFormFields = require('./../../lib/get-form-fields')
 
 const onSignUp = function (event) {
@@ -51,11 +51,24 @@ const onChangePassword = function (event) {
     .catch(ui.failure)
 }
 
+const onNewCharacter = function (event) {
+  // prevent default
+  event.preventDefault()
+
+  const data = getFormFields(event.target)
+  console.log(data)
+  // make api call
+  api.newCharacter(data)
+    .then(ui.newCharacterSuccess)
+    .catch(ui.failure)
+}
+
 const attachEventListeners = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('#new-character').on('submit', onNewCharacter)
 }
 
 module.exports = {

@@ -40,9 +40,21 @@ const changePassword = function (data) {
   })
 }
 
+const newCharacter = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/characters/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  newCharacter
 }
