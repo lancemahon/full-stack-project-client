@@ -19,6 +19,16 @@ const signIn = function (data) {
   })
 }
 
+const getCharacters = function () {
+  return $.ajax({
+    url: config.apiUrl + '/characters',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const signOut = function () {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
@@ -42,8 +52,29 @@ const changePassword = function (data) {
 
 const newCharacter = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/characters/',
+    url: config.apiUrl + '/characters',
     method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const deleteCharacter = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/characters/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateCharacter = function (id, data) {
+  return $.ajax({
+    url: config.apiUrl + '/characters/' + id,
+    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -56,5 +87,8 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
-  newCharacter
+  newCharacter,
+  getCharacters,
+  deleteCharacter,
+  updateCharacter
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Character Creatio</title>
+      <title>Character Creation</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,7 +11,8 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
+    <body class="dark">
+      <div class="welcome">
       <h1>Character Creation</h1>
       <form id='sign-up'>
         <fieldset>
@@ -38,7 +39,7 @@
             <input class='button' type="submit" value="Sign out!">
         </fieldset>
       </form>
-      <form id='change-password' class='hidden'>
+    </div>
         <fieldset>
             <legend>Change Password!</legend>
             <input type="password" name="passwords[old]"
@@ -47,12 +48,124 @@
               placeholder="New password">
               <input class='button' type="submit" value="Change password!">
         </fieldset>
+      <div class="box character-selection hidden">
+        <div class="specialty col-2 barbarian">
+          <p class="class barbarian">Barbarian</p>
+          <form id='pick-barbarian' class='pick' data-id="barbarian">
+            <fieldset>
+              <input class='character-button button' type="submit" value="I want to play a barbarian">
+            </fieldset>
+          </form>
+          <p class="barbarian blurb">A fierce warrior of primitive background who can enter a battle rage</p>
+        </div>
+        <div class="specialty col-2 bard">
+          <p class="class bard">Bard</p>
+          <form id='pick-bard' class='pick' data-id="bard">
+            <fieldset>
+              <input class='character-button button' type="submit" value="I want to play a bard">
+            </fieldset>
+          </form>
+          <p class="bard blurb">An inspiring magician whose power echoes the music of creation</p>
+        </div>
+        <div class="specialty col-2 cleric">
+          <p class="class cleric">Cleric</p>
+          <form id='pick-cleric' class='pick' data-id="cleric">
+            <fieldset>
+              <input class='character-button button' type="submit" value="I want to play a cleric">
+            </fieldset>
+          </form>
+          <p class="cleric blurb">A priestly champion who wields divine magic in service of a higher power</p>
+        </div>
+        <div class="specialty col-2 druid">
+          <p class="class druid">Druid</p>
+          <form id='pick-druid' class='pick' data-id="druid">
+            <fieldset>
+              <input class='character-button button' type="submit" value="I want to play a druid">
+            </fieldset>
+          </form>
+          <p class="druid blurb">A priest of the Old Faith, wielding the powers of nature — moonlight and plant growth, fire and lightning — and adopting animal forms</p>
+        </div>
+        <div class="specialty col-2 fighter">
+          <p class="class fighter">Fighter</p>
+          <form id='pick-fighter' class='pick' data-id="fighter">
+            <fieldset>
+              <input class='character-button button' type="submit" value="I want to play a fighter">
+            </fieldset>
+          </form>
+          <p class="fighter blurb">A master of martial combat, skilled with a variety of weapons and armor</p>
+        </div>
+        <div class="specialty col-2 monk">
+          <p class="class monk">Monk</p>
+          <form id='pick-monk' class='pick' data-id="monk">
+            <fieldset>
+              <input class='character-button button' type="submit" value="I want to play a monk">
+            </fieldset>
+          </form>
+          <p class="monk blurb">A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection</p>
+        </div>
+        <div class="specialty col-2 paladin">
+          <p class="class paladin">Paladin</p>
+          <form id='pick-paladin' class='pick' data-id="paladin">
+            <fieldset>
+              <input class='character-button button' type="submit" value="I want to play a paladin">
+            </fieldset>
+          </form>
+          <p class="paladin blurb">A holy warrior bound to a sacred oath</p>
+        </div>
+        <div class="specialty col-2 ranger">
+          <p class="class ranger">Ranger</p>
+          <form id='pick-ranger' class='pick' data-id="ranger">
+            <fieldset>
+              <input class='character-button button' type="submit" value="I want to play a ranger">
+            </fieldset>
+          </form>
+          <p class="ranger blurb">A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization</p>
+        </div>
+        <div class="specialty col-2 rogue">
+          <p class="class rogue">Rogue</p>
+          <form id='pick-rogue' class='pick' data-id="rogue">
+            <fieldset>
+              <input class='character-button button' type="submit" value="I want to play a rogue">
+            </fieldset>
+          </form>
+          <p class="rogue blurb">A scoundrel who uses stealth and trickery to overcome obstacles and enemies</p>
+        </div>
+        <div class="specialty col-2 sorcerer">
+          <p class="class sorcerer">Sorcerer</p>
+          <form id='pick-sorcerer' class='pick' data-id="sorcerer">
+            <fieldset>
+              <input class='character-button button' type="submit" value="I want to play a sorcerer">
+            </fieldset>
+          </form>
+          <p class="sorcerer blurb">A spellcaster who draws on inherent magic from a gift or bloodline</p>
+        </div>
+        <div class="specialty col-2 warlock">
+          <p class="class warlock">Warlock</p>
+          <form id='pick-warlock' class='pick' data-id="warlock">
+            <fieldset>
+              <input class='character-button button' type="submit" value="I want to play a warlock">
+            </fieldset>
+          </form>
+          <p class="warlock blurb">A wielder of magic that is derived from a bargain with an extraplanar entity</p>
+        </div>
+        <div class="specialty col-2 wizard">
+          <p class="class wizard">Wizard</p>
+          <form id='pick-wizard' class='pick' data-id="wizard">
+            <fieldset>
+              <input class='character-button button' type="submit" value="I want to play a wizard">
+            </fieldset>
+          </form>
+          <p class="wizard blurb">A scholarly magic-user capable of manipulating the structures of reality</p>
+        </div>
+      </div>
+      <form class="name-your-character hidden">
       </form>
       <form id='new-character' class='hidden'>
+      </form>
         <fieldset>
             <legend>Make A New Character</legend>
-            <input type="text" name='character[name]'placeholder="Name">
-            <select name='character[spec]'>
+            <input type="text" name='character[name]' placeholder="Name">
+            <select type="text" name='character[specialty]'>
               <option>Barbarian</option>
               <option>Bard</option>
               <option>Cleric</option>
@@ -69,5 +182,6 @@
             <input class='button' type="submit" value="Create!">
         </fieldset>
       </form>
+      <div id='character-list' class='character-list'></div>
     </body>
 </html>

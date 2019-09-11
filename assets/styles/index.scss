@@ -1,5 +1,180 @@
 @import '~bootstrap/scss/bootstrap';
 
+// SCSS SYNTAX
+// $font-stack:    Helvetica, sans-serif;
+// $primary-color: #333;
+
+$barbarian-color: #C92945;
+$bard-color: #5B0057;
+$cleric-color: #DBDFA3;
+$druid-color: green;
+$fighter-color: orange;
+$monk-color: gray;
+$paladin-color: gold;
+$ranger-color: #005923;
+$rogue-color: blue;
+$sorceror-color: #641B3D;
+$warlock-color: #0A060F;
+$wizard-color: #B070D0;
+
+.dark {
+  background-color: #077FAA;
+}
+
+.blurb {
+  color: $barbarian-color;
+}
+
+.barbarian {
+  background-color: $barbarian-color;
+}
+
+.bard {
+  background-color: $bard-color;
+}
+
+.cleric {
+  background-color: $cleric-color;
+}
+
+.druid {
+  background-color: $druid-color;
+}
+
+.fighter {
+  background-color: $fighter-color;
+}
+
+.monk {
+  background-color: $monk-color;
+}
+
+.paladin {
+  background-color: $paladin-color;
+}
+
+.ranger {
+  background-color: $ranger-color;
+}
+
+.rogue {
+  background-color: $rogue-color;
+}
+
+.sorcerer {
+  background-color: $sorceror-color;
+}
+
+.warlock {
+  color: white;
+  background-color: $warlock-color;
+}
+
+.wizard {
+  color: blue;
+  background-color: $wizard-color;
+}
+
+
+
+.box {
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  // align-content: space-between;
+}
+
+.specialty {
+  // width: 400px;
+  // font-size: 3em;
+  text-align: center;
+  height: 500px;
+  // padding: 5em 15em;
+  transition: opacity .5s;
+  transition: height 1s;
+  transition: background-color 1.5s;
+  // -webkit-transition: all 1s ease;
+  // -moz-transition: all 1s ease;
+  // transition: all 1s ease;
+}
+
+.specialty:hover {
+  opacity: 1;
+  background-color: #d9d9d9;
+  :firstChild {
+    background-color: #d9d9d9;
+  }
+}
+
+.class {
+  font-size: 3em;
+}
+
+.character-button {
+  position: relative;
+}
+
+.blurb {
+  background-color: inherit;
+  // transition: background-color 1.5s;
+  width: inherit;
+  padding: 0 0 0 0;
+}
+
+.blurb-hover {
+  background-color: #d9d9d9;
+}
+
+.barbarian > .blurb {
+  color: $barbarian-color
+}
+
+.bard > .blurb {
+  color: $bard-color;
+}
+
+.cleric > .blurb {
+  color: $cleric-color;
+}
+
+.druid > .blurb {
+  color: $druid-color;
+}
+
+.fighter > .blurb {
+  color: $fighter-color;
+}
+
+.monk > .blurb {
+  color: $monk-color;
+}
+
+.paladin > .blurb {
+  color: $paladin-color;
+}
+
+.ranger > .blurb {
+  color: $ranger-color;
+}
+
+.rogue > .blurb {
+  color: $rogue-color;
+}
+
+.sorcerer > .blurb {
+  color: $sorceror-color;
+}
+
+.warlock > .blurb {
+  color: $warlock-color;
+}
+
+.wizard > .blurb {
+  color: $wizard-color;
+}
+
 .hidden {
   display: none;
 }

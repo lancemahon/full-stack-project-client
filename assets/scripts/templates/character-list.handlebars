@@ -1,0 +1,32 @@
+{{#each characters as |character|}}
+  {{log character}}
+  <section data-id="{{character.id}}">
+    <h5>
+      {{character.name}} is a {{character.specialty}}
+    </h5>
+    <div>
+      <form class='update-character' data-id="{{character.id}}">
+        <fieldset>
+            <legend>{{character.name}}</legend>
+            <input type="text" name='character[name]' placeholder="Name">
+            <select type="text" name='character[specialty]'>
+              <option>Barbarian</option>
+              <option>Bard</option>
+              <option>Cleric</option>
+              <option>Druid</option>
+              <option>Fighter</option>
+              <option>Monk</option>
+              <option>Paladin</option>
+              <option>Ranger</option>
+              <option>Rogue</option>
+              <option>Sorcerer</option>
+              <option>Warlock</option>
+              <option>Wizard</option>
+            </select>
+            <button type="submit" class='btn update-button'>Update {{character.name}}?</button>
+        </fieldset>
+      </form>
+      <button class='btn btn-danger delete-button' data-id="{{character.id}}">Retire {{character.name}}?</button>
+    </div>
+  </section>
+{{/each}}

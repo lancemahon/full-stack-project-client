@@ -34,12 +34,12 @@ $('#create-book').on('submit', function (event) {
 Then, the `bookData` variable would look like this:
 
 ```js
-{
-  book: {
-    title: "<whatever was entered in the title input >",
-    author: "<whatever was entered in the author input>"
+  {
+    book: {
+      title: "<whatever was entered in the title input >",
+      author: "<whatever was entered in the author input>"
+    }
   }
-}
 ```
 
 Note that in your projects, the code above will be spread out over several

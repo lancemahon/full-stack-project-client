@@ -1,6 +1,9 @@
 'use strict'
 
 const store = require('./store')
+const showCharactersTemplate = require('./templates/character-list.handlebars')
+const nameYourCharacterTemplate = require('./templates/name-your-character.handlebars')
+// const updateButtonTemplate = require('./templates/update-button.handlebars')
 
 const signUpSuccess = function () {
   console.log('Successful sign up')
@@ -11,7 +14,9 @@ const signUpSuccess = function () {
 const signInSuccess = function (data) {
   store.user = data.user
   console.log('Successful sign in')
-  $('#sign-in, #sign-out, #change-password, #new-character').toggleClass('hidden')
+  // const showCharactersHtml = showCharactersTemplate({ characters: data.characters }) // not working!
+  // $('#character-list').html(showCharactersHtml)
+  $('#sign-in, #sign-out, #change-password, #new-character, .character-selection').toggleClass('hidden')
   if (!$('#sign-up').hasClass('hidden')) {
     $('#sign-up').toggleClass('hidden')
   }
@@ -23,6 +28,7 @@ const signOutSuccess = function () {
   store.user = {}
   console.log('Successful sign out')
   $('#sign-in, #sign-up, #sign-out, #change-password, #new-character').toggleClass('hidden')
+  $('#character-list').html('')
 }
 
 const changePasswordSuccess = function () {
@@ -30,8 +36,22 @@ const changePasswordSuccess = function () {
   document.getElementById('change-password').reset()
 }
 
-const newCharacterSuccess = function () {
+const getCharactersSuccess = (data) => {
+  const showCharactersHtml = showCharactersTemplate({ characters: data.characters })
+  $('.character-list').html(showCharactersHtml)
+}
+
+const newCharacterSuccess = (data) => {
   console.log('Successful created a new character')
+  document.getElementById('new-character').reset()
+}
+
+const wannaPlay = (choice) => {
+  $('.character-selection, .name-your-character').toggleClass('hidden')
+  const nameYourCharacterHtml = nameYourCharacterTemplate({ choice: choice })
+  $('.name-your-character').html(nameYourCharacterHtml)
+
+  // $('.name-your-character').toggleClass('hidden')
 }
 
 const failure = function () {
@@ -49,5 +69,8 @@ module.exports = {
   signOutSuccess,
   changePasswordSuccess,
   newCharacterSuccess,
+  getCharactersSuccess,
+  wannaPlay,
+  // updateOptions,
   failure
 }
