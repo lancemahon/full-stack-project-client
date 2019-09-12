@@ -9,7 +9,8 @@
 {{#each characters as |character|}}
   {{log character}}
   {{#if character.editable}}
-  <section data-id="{{character.id}}">
+  <!--     for styling!               so dynamic!     -->
+  <section data-id="{{character.id}}" class="{{character.specialty}}">
     <h5>
       {{character.name}} is a {{character.specialty}}
     </h5>
