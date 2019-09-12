@@ -61,7 +61,7 @@ const onGetCharacters = function () {
 const onNewCharacter = function (event) {
   // prevent default
   event.preventDefault()
-  console.log('sanity check')
+  // console.log('sanity check')
 
   const data = getFormFields(event.target)
   // console.log('new character event: ', event)
@@ -105,20 +105,9 @@ const onWannaPlay = function (event) {
 
 const onMakeAnew = function (event) {
   event.preventDefault()
-  console.log('sanity check')
+  // console.log('sanity check')
   ui.backToCharacterCreation()
 }
-
-// const onCreationMenuHover = function (event) {
-//   event.preventDefault()
-//   const target = $(event.target)
-//   const blurb = $(target + ':last-child')
-//   console.log(target)
-//   if (blurb.hasClass('cleric')) {
-//     blurb.toggleClass('blurb-hover')
-//   }
-//   console.log('sanity check')
-// }
 
 const attachEventListeners = function () {
   $('.pick').on('submit', onWannaPlay)

@@ -43,7 +43,7 @@ const getCharactersSuccess = (data) => {
 }
 
 const newCharacterSuccess = (data) => {
-  console.log('Successfuly created a new character')
+  // console.log('Successfuly created a new character')
   $('.name-your-character').html('') // empty the form html
   $('.character-list').removeClass('hidden')
   // console.log('Successful created a new character')
