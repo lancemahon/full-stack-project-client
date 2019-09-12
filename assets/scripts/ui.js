@@ -50,8 +50,6 @@ const wannaPlay = (choice) => {
   $('.character-selection, .name-your-character').toggleClass('hidden')
   const nameYourCharacterHtml = nameYourCharacterTemplate({ choice: choice })
   $('.name-your-character').html(nameYourCharacterHtml)
-
-  // $('.name-your-character').toggleClass('hidden')
 }
 
 const failure = function () {

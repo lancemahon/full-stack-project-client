@@ -102,8 +102,14 @@ const onWannaPlay = function (event) {
   ui.wannaPlay(choice)
 }
 
+const onSubmitCharacter = function (event) {
+  event.preventDefault()
+  const name = getFormFields(event.target)
+}
+
 const attachEventListeners = function () {
   $('.pick').on('submit', onWannaPlay)
+  $('.name-your-character').on('submit', onSubmitCharacter) // can get away w/o bubbling effect happening, because the form already exists in html
   //
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)

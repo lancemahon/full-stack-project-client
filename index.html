@@ -40,6 +40,7 @@
         </fieldset>
       </form>
     </div>
+    <form id="change-password" class="hidden">
         <fieldset>
             <legend>Change Password!</legend>
             <input type="password" name="passwords[old]"
@@ -48,6 +49,7 @@
               placeholder="New password">
               <input class='button' type="submit" value="Change password!">
         </fieldset>
+      </form>
       <div class="box character-selection hidden">
         <div class="specialty col-2 barbarian">
           <p class="class barbarian">Barbarian</p>
@@ -159,9 +161,7 @@
         </div>
       </div>
       <form class="name-your-character hidden">
-      </form>
-      <form id='new-character' class='hidden'>
-      </form>
+      <!-- </form>
         <fieldset>
             <legend>Make A New Character</legend>
             <input type="text" name='character[name]' placeholder="Name">
@@ -181,7 +181,7 @@
             </select>
             <input class='button' type="submit" value="Create!">
         </fieldset>
-      </form>
+      </form> -->
       <div id='character-list' class='character-list'></div>
     </body>
 </html>
