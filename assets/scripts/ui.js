@@ -42,8 +42,8 @@ const getCharactersSuccess = (data) => {
 }
 
 const newCharacterSuccess = (data) => {
-  console.log('Successful created a new character')
-  document.getElementById('new-character').reset()
+  console.log('Successfuly created a new character')
+  $('.name-your-character').html('') // empty the form html
 }
 
 const wannaPlay = (choice) => {
