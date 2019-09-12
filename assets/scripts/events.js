@@ -17,12 +17,6 @@ const onSignUp = function (event) {
     .catch(ui.failure)
 }
 
-const onGetCharacters = function () {
-  api.getCharacters()
-    .then(ui.getCharactersSuccess)
-    .catch(ui.failure)
-}
-
 const onSignIn = function (event) {
   // prevent default
   event.preventDefault()
@@ -55,6 +49,12 @@ const onChangePassword = function (event) {
   // make api call
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
+    .catch(ui.failure)
+}
+
+const onGetCharacters = function () {
+  api.getCharacters()
+    .then(ui.getCharactersSuccess)
     .catch(ui.failure)
 }
 
@@ -102,12 +102,19 @@ const onWannaPlay = function (event) {
   ui.wannaPlay(choice)
 }
 
-const onMakeAnew = function (event) {
-  event.preventDefault()
-  ui.backToCharacterCreation()
-}
+// const onCreationMenuHover = function (event) {
+//   event.preventDefault()
+//   const target = $(event.target)
+//   const blurb = $(target + ':last-child')
+//   console.log(target)
+//   if (blurb.hasClass('cleric')) {
+//     blurb.toggleClass('blurb-hover')
+//   }
+//   console.log('sanity check')
+// }
 
 const attachEventListeners = function () {
+  // $('.specialty').on('mouseover', onCreationMenuHover)
   $('.pick').on('submit', onWannaPlay)
   //
   $('#sign-up').on('submit', onSignUp)
@@ -117,8 +124,6 @@ const attachEventListeners = function () {
   $('#new-character').on('submit', onNewCharacter)
   $('.character-list').on('click', '.delete-button', onDeleteCharacter)
   $('.character-list').on('submit', '.update-character', onUpdateCharacter)
-  $('.character-list').on('submit', '.anew-form', onMakeAnew)
-  $('.name-your-character').on('submit', onNewCharacter)
 }
 
 module.exports = {

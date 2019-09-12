@@ -16,6 +16,7 @@ $rogue-color: blue;
 $sorceror-color: #641B3D;
 $warlock-color: #0A060F;
 $wizard-color: #B070D0;
+$cleric-text: #223552;
 
 .dark {
   background-color: #077FAA;
@@ -35,6 +36,13 @@ $wizard-color: #B070D0;
 
 .cleric {
   background-color: $cleric-color;
+  transition: color 1.5s;
+  transition: opacity .5s;
+  transition: height 1s;
+}
+
+.cleric:hover {
+  color: $cleric-text;
 }
 
 .druid {
@@ -153,6 +161,11 @@ $wizard-color: #B070D0;
 
 .cleric > .blurb {
   color: $cleric-color;
+}
+
+.cleric .blurb-hover {
+  background-color: #d9d9d9;
+  color: $cleric-text;
 }
 
 .druid > .blurb {
