@@ -61,10 +61,11 @@ const onGetCharacters = function () {
 const onNewCharacter = function (event) {
   // prevent default
   event.preventDefault()
+  console.log('sanity check')
 
   const data = getFormFields(event.target)
-  console.log('new character event: ', event)
-  console.log(data)
+  // console.log('new character event: ', event)
+  // console.log(data)
   // make api call
   api.newCharacter(data)
     .then(ui.newCharacterSuccess)
@@ -85,11 +86,11 @@ const onUpdateCharacter = function (event) {
   // prevent default
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('event: ', event)
-  console.log('event.target; ', event.target)
+  // console.log('event: ', event)
+  // console.log('event.target; ', event.target)
   const id = $(event.target).data('id')
-  console.log('id: ', id)
-  console.log('data :', data)
+  // console.log('id: ', id)
+  // console.log('data :', data)
   api.updateCharacter(id, data)
     .then(onGetCharacters)
     .catch(ui.failure)
@@ -98,8 +99,14 @@ const onUpdateCharacter = function (event) {
 const onWannaPlay = function (event) {
   event.preventDefault()
   const choice = $(this).attr('data-id')
-  console.log(choice)
+  // console.log(choice)
   ui.wannaPlay(choice)
+}
+
+const onMakeAnew = function (event) {
+  event.preventDefault()
+  console.log('sanity check')
+  ui.backToCharacterCreation()
 }
 
 // const onCreationMenuHover = function (event) {
@@ -114,14 +121,14 @@ const onWannaPlay = function (event) {
 // }
 
 const attachEventListeners = function () {
-  // $('.specialty').on('mouseover', onCreationMenuHover)
   $('.pick').on('submit', onWannaPlay)
   //
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
-  $('#new-character').on('submit', onNewCharacter)
+  $('.name-your-character').on('submit', onNewCharacter)
+  $('.character-list').on('submit', '.anew-form', onMakeAnew)
   $('.character-list').on('click', '.delete-button', onDeleteCharacter)
   $('.character-list').on('submit', '.update-character', onUpdateCharacter)
 }

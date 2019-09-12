@@ -6,14 +6,14 @@ const nameYourCharacterTemplate = require('./templates/name-your-character.handl
 // const updateButtonTemplate = require('./templates/update-button.handlebars')
 
 const signUpSuccess = function () {
-  console.log('Successful sign up')
+  // console.log('Successful sign up')
   $('#sign-up').toggleClass('hidden')
   document.getElementById('sign-up').reset()
 }
 
 const signInSuccess = function (data) {
   store.user = data.user
-  console.log('Successful sign in')
+  // console.log('Successful sign in')
   // const showCharactersHtml = showCharactersTemplate({ characters: data.characters }) // not working!
   // $('#character-list').html(showCharactersHtml)
   $('#sign-in, #sign-out, #change-password, #new-character, .character-selection').toggleClass('hidden')
@@ -26,14 +26,13 @@ const signInSuccess = function (data) {
 
 const signOutSuccess = function () {
   store.user = {}
-  console.log('Successful sign out')
+  // console.log('Successful sign out')
   $('#sign-in, #sign-up, #sign-out, #change-password, #new-character').toggleClass('hidden')
-  $('.character-list').html('')
-  $('.character-list').toggleClass('hidden') // redundant, but safe
+  $('#character-list').html('')
 }
 
 const changePasswordSuccess = function () {
-  console.log('Successfully changed password')
+  // console.log('Successfully changed password')
   document.getElementById('change-password').reset()
 }
 
@@ -46,26 +45,29 @@ const newCharacterSuccess = (data) => {
   console.log('Successfuly created a new character')
   $('.name-your-character').html('') // empty the form html
   $('.character-list').toggleClass('hidden')
+  // console.log('Successful created a new character')
+  // document.getElementById('new-character').reset()
 }
 
 const wannaPlay = (choice) => {
-  $('.character-selection').toggleClass('hidden')
-  $('.name-your-character').toggleClass('hidden')
+  $('.character-selection, .name-your-character').toggleClass('hidden')
   const nameYourCharacterHtml = nameYourCharacterTemplate({ choice: choice })
   $('.name-your-character').html(nameYourCharacterHtml)
+
+  // $('.name-your-character').toggleClass('hidden')
 }
 
 const backToCharacterCreation = () => {
   // hide character list
   $('.character-list').toggleClass('hidden')
 
-  // show character creation menu
+  //   show character creation menu
   $('.character-selection').toggleClass('hidden')
   $('.name-your-character').toggleClass('hidden')
 }
 
 const failure = function () {
-  console.log('Failure!')
+  // console.log('Failure!')
   // reset all form fields on any failed submission
   document.getElementById('sign-in').reset()
   document.getElementById('sign-out').reset()
