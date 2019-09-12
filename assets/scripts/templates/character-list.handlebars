@@ -1,5 +1,6 @@
 {{#each characters as |character|}}
   {{log character}}
+  {{#if character.editable}}
   <section data-id="{{character.id}}">
     <h5>
       {{character.name}} is a {{character.specialty}}
@@ -29,4 +30,5 @@
       <button class='btn btn-danger delete-button' data-id="{{character.id}}">Retire {{character.name}}?</button>
     </div>
   </section>
+  {{/if}}
 {{/each}}
