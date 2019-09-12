@@ -1,4 +1,8 @@
 <fieldset>
   <legend>What will your {{choice}}'s name be?</legend>
   <input type="text" name='character[name]' placeholder="name">
+  <select type="text" name='character[specialty]' class="hidden">
+    <option selected="selected">{{choice}}</option>
+  </select>
+  <input class="button" type="submit" value="Create your {{choice}}!">
 </fieldset>

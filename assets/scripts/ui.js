@@ -28,7 +28,8 @@ const signOutSuccess = function () {
   store.user = {}
   console.log('Successful sign out')
   $('#sign-in, #sign-up, #sign-out, #change-password, #new-character').toggleClass('hidden')
-  $('#character-list').html('')
+  $('.character-list').html('')
+  $('.character-list').toggleClass('hidden') // redundant, but safe
 }
 
 const changePasswordSuccess = function () {
@@ -42,16 +43,25 @@ const getCharactersSuccess = (data) => {
 }
 
 const newCharacterSuccess = (data) => {
-  console.log('Successful created a new character')
-  document.getElementById('new-character').reset()
+  console.log('Successfuly created a new character')
+  $('.name-your-character').html('') // empty the form html
+  $('.character-list').toggleClass('hidden')
 }
 
 const wannaPlay = (choice) => {
-  $('.character-selection, .name-your-character').toggleClass('hidden')
+  $('.character-selection').toggleClass('hidden')
+  $('.name-your-character').toggleClass('hidden')
   const nameYourCharacterHtml = nameYourCharacterTemplate({ choice: choice })
   $('.name-your-character').html(nameYourCharacterHtml)
+}
 
-  // $('.name-your-character').toggleClass('hidden')
+const backToCharacterCreation = () => {
+  // hide character list
+  $('.character-list').toggleClass('hidden')
+
+  // show character creation menu
+  $('.character-selection').toggleClass('hidden')
+  $('.name-your-character').toggleClass('hidden')
 }
 
 const failure = function () {
@@ -71,6 +81,6 @@ module.exports = {
   newCharacterSuccess,
   getCharactersSuccess,
   wannaPlay,
-  // updateOptions,
+  backToCharacterCreation,
   failure
 }

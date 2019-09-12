@@ -1,5 +1,14 @@
+<div class="character-list-template">
+  <div class="col-12 anew">
+    <div class="anew-buttonbox">
+      <form class="anew-form">
+        <input class="anew-button button" type="submit" value="Make another character?">
+      </form>
+    </div>
+  </div>
 {{#each characters as |character|}}
   {{log character}}
+  {{#if character.editable}}
   <section data-id="{{character.id}}">
     <h5>
       {{character.name}} is a {{character.specialty}}
@@ -29,4 +38,6 @@
       <button class='btn btn-danger delete-button' data-id="{{character.id}}">Retire {{character.name}}?</button>
     </div>
   </section>
+  {{/if}}
 {{/each}}
+</div>

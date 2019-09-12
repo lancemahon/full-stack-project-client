@@ -102,6 +102,11 @@ const onWannaPlay = function (event) {
   ui.wannaPlay(choice)
 }
 
+const onMakeAnew = function (event) {
+  event.preventDefault()
+  ui.backToCharacterCreation()
+}
+
 const attachEventListeners = function () {
   $('.pick').on('submit', onWannaPlay)
   //
@@ -112,6 +117,8 @@ const attachEventListeners = function () {
   $('#new-character').on('submit', onNewCharacter)
   $('.character-list').on('click', '.delete-button', onDeleteCharacter)
   $('.character-list').on('submit', '.update-character', onUpdateCharacter)
+  $('.character-list').on('submit', '.anew-form', onMakeAnew)
+  $('.name-your-character').on('submit', onNewCharacter)
 }
 
 module.exports = {
