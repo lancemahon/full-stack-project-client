@@ -1,3 +1,11 @@
+<div class="character-list-template">
+  <div class="col-12 anew">
+    <div class="anew-buttonbox">
+      <form class="anew-form">
+        <input class="anew-button button" type="submit" value="Make another character?">
+      </form>
+    </div>
+  </div>
 {{#each characters as |character|}}
   {{log character}}
   {{#if character.editable}}
@@ -32,3 +40,4 @@
   </section>
   {{/if}}
 {{/each}}
+</div>

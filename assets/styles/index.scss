@@ -116,6 +116,22 @@ $wizard-color: #B070D0;
   position: relative;
 }
 
+.anew {
+  display: flex;
+  background-color: #0f3b1b;
+}
+
+.anew-buttonbox {
+  background-color: #efdfbb;
+  border-radius: 25px 10px 25px 10px;
+}
+
+.anew-button {
+  background-color: #efdfbb;
+  // border-radius: 50% 30% / 10% 40%;
+  border-radius: 25px 10px 25px 10px;
+}
+
 .blurb {
   background-color: inherit;
   // transition: background-color 1.5s;

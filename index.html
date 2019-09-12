@@ -13,34 +13,34 @@
     </head>
     <body class="dark">
       <div class="welcome">
-      <h1>Character Creation</h1>
-      <form id='sign-up'>
-        <fieldset>
-            <legend>Sign up!</legend>
-            <input type="text" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]"
-             placeholder="Password">
-             <input type="password" name="credentials[password_confirmation]"
-             placeholder="Confirm Password">
-             <input class='button' type="submit" value="Sign up!">
-        </fieldset>
+        <h1>Character Creation</h1>
+        <form id='sign-up'>
+          <fieldset>
+              <legend>Sign up!</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]"
+               placeholder="Password">
+               <input type="password" name="credentials[password_confirmation]"
+               placeholder="Confirm Password">
+               <input class='button' type="submit" value="Sign up!">
+          </fieldset>
+          </form>
+        <form id='sign-in'>
+          <fieldset>
+              <legend>Sign in!</legend>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="password">
+              <input class='button' type="submit" value="Sign in!">
+          </fieldset>
         </form>
-      <form id='sign-in'>
-        <fieldset>
-            <legend>Sign in!</legend>
-            <input type="text" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="password">
-            <input class='button' type="submit" value="Sign in!">
-        </fieldset>
-      </form>
-      <form id='sign-out' class='hidden'>
-        <fieldset>
-            <legend>Sign out!</legend>
-            <input class='button' type="submit" value="Sign out!">
-        </fieldset>
-      </form>
-    </div>
-    <form id="change-password" class="hidden">
+        <form id='sign-out' class='hidden'>
+          <fieldset>
+              <legend>Sign out!</legend>
+              <input class='button' type="submit" value="Sign out!">
+          </fieldset>
+        </form>
+      </div>
+      <form id="change-password" class="hidden">
         <fieldset>
             <legend>Change Password!</legend>
             <input type="password" name="passwords[old]"

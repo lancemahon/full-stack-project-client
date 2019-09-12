@@ -54,6 +54,15 @@ const wannaPlay = (choice) => {
   $('.name-your-character').html(nameYourCharacterHtml)
 }
 
+const backToCharacterCreation = () => {
+  // hide character list
+  $('.character-list').html('')
+  $('.character-list').toggleClass('hidden') // redundant, but safe
+
+  // show character creation menu
+  $('.character-selection').toggleClass('hidden')
+}
+
 const failure = function () {
   console.log('Failure!')
   // reset all form fields on any failed submission
@@ -71,6 +80,6 @@ module.exports = {
   newCharacterSuccess,
   getCharactersSuccess,
   wannaPlay,
-  // updateOptions,
+  backToCharacterCreation,
   failure
 }
