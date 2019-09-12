@@ -28,6 +28,7 @@ const signOutSuccess = function () {
   store.user = {}
   // console.log('Successful sign out')
   $('#sign-in, #sign-up, #sign-out, #change-password, #new-character').toggleClass('hidden')
+  $('.character-selection').addClass('hidden')
   $('#character-list').html('')
 }
 
@@ -44,7 +45,7 @@ const getCharactersSuccess = (data) => {
 const newCharacterSuccess = (data) => {
   console.log('Successfuly created a new character')
   $('.name-your-character').html('') // empty the form html
-  $('.character-list').toggleClass('hidden')
+  $('.character-list').removeClass('hidden')
   // console.log('Successful created a new character')
   // document.getElementById('new-character').reset()
 }
@@ -53,6 +54,7 @@ const wannaPlay = (choice) => {
   $('.character-selection, .name-your-character').toggleClass('hidden')
   const nameYourCharacterHtml = nameYourCharacterTemplate({ choice: choice })
   $('.name-your-character').html(nameYourCharacterHtml)
+  $('.name-your-character').removeClass('hidden')
 
   // $('.name-your-character').toggleClass('hidden')
 }
