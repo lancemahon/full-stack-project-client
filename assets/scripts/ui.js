@@ -49,18 +49,19 @@ const newCharacterSuccess = (data) => {
 }
 
 const wannaPlay = (choice) => {
-  $('.character-selection, .name-your-character').toggleClass('hidden')
+  $('.character-selection').toggleClass('hidden')
+  $('.name-your-character').toggleClass('hidden')
   const nameYourCharacterHtml = nameYourCharacterTemplate({ choice: choice })
   $('.name-your-character').html(nameYourCharacterHtml)
 }
 
 const backToCharacterCreation = () => {
   // hide character list
-  $('.character-list').html('')
-  $('.character-list').toggleClass('hidden') // redundant, but safe
+  $('.character-list').toggleClass('hidden')
 
   // show character creation menu
   $('.character-selection').toggleClass('hidden')
+  $('.name-your-character').toggleClass('hidden')
 }
 
 const failure = function () {
